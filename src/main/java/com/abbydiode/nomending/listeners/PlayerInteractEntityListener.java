@@ -36,6 +36,16 @@ public class PlayerInteractEntityListener implements Listener {
 						((EnchantmentStorageMeta) recipe.getResult().getItemMeta()).getStoredEnchantLevel(Enchantment.MENDING) > 0) {
 					recipe.setMaxUses(0);
 				}
+				if (recipe.getResult().getType() == Material.ENCHANTED_BOOK && 
+						((EnchantmentStorageMeta) recipe.getResult().getItemMeta()).getStoredEnchantLevel(Enchantment.FORTUNE) > 0) {
+					recipe.setMaxUses(0);
+				}
+				if (recipe.getResult().getType() == Material.SADDLE || recipe.getResult().getType() == Material.BELL || recipe.getResult().getType() == Material.SUSPICIOUS_STEW || recipe.getResult().getType() == Material.ARROW || recipe.getResult().getType() == Material.LANTERN) {
+					recipe.setMaxUses(0);
+				}
+			        if (recipe.getResult().getType() == Material.PUMPKIN_PIE || recipe.getResult().getType() == Material.CAKE || recipe.getResult().getType() == Material.GOLDEN_CARROT || recipe.getResult().getType() == Material.RABBIT_STEW) {
+					recipe.setMaxUses(0);
+				}
 			});
 		}
 	}
